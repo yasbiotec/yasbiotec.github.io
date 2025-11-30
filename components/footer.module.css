@@ -1,0 +1,221 @@
+/* --- CONTAINER PRINCIPAL (Fundo Vermelho Sangue) --- */
+.footer-container {
+  width: 100%;
+  /* Gradiente que vai de vermelho sangue escuro para quase preto */
+  background: linear-gradient(180deg, #991b1b 0%, #450a0a 100%);
+  color: #ffe4e6; /* Texto branco rosado para contraste */
+  position: relative;
+  padding: 100px 24px 32px; /* Padding topo maior para o efeito de escorrer */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- EFEITO DE SANGUE ESCORRENDO (Topo) --- */
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* Ajuste fino para cobrir a emenda */
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  /* SVG que simula líquido escorrendo */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(180deg); /* Inverte para parecer que está descendo do branco */
+}
+
+.footer-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2; /* Fica acima das células flutuantes */
+}
+
+/* --- LAYOUT SUPERIOR --- */
+.footer-top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid rgba(255, 200, 200, 0.2); /* Linha divisória avermelhada */
+  padding-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .footer-top-section {
+    grid-template-columns: 1fr 1fr; /* 2 colunas em tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top-section {
+    grid-template-columns: 1fr; /* 1 coluna em mobile */
+    text-align: center;
+  }
+}
+
+/* --- MARCA E LOGO --- */
+.footer-brand-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  color: #fca5a5; /* Vermelho claro */
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* --- ÍCONES SOCIAIS --- */
+.footer-social-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+  background-color: #dc2626; /* Vermelho vivo no hover */
+  border-color: #dc2626;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+/* --- LINKS --- */
+.footer-links-column h3, .footer-contact-column h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-links-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-column a {
+  color: #fecaca; /* Rosa/Vermelho muito claro */
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.footer-links-column a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --- CONTATO --- */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fecaca;
+  margin-bottom: 12px;
+}
+
+.contact-item a {
+  color: #fecaca;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: white;
+}
+
+/* --- RODAPÉ INFERIOR --- */
+.footer-bottom {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #f87171; /* Vermelho suave */
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-legal-links a {
+  color: #f87171;
+  text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+  color: white;
+}
+
+/* --- EFEITO DE CÉLULAS DE SANGUE FLUTUANDO --- */
+/* Vamos usar as classes 'shape-1' e 'shape-2' que já existem no seu JS */
+
+.footer-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape-1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220,38,38,0.4) 0%, rgba(153,27,27,0) 70%);
+  bottom: -20px;
+  left: 10%;
+  animation: floatBlood 8s infinite ease-in-out;
+}
+
+.shape-2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220,38,38,0.3) 0%, rgba(153,27,27,0) 70%);
+  bottom: 20%;
+  right: 10%;
+  animation: floatBlood 12s infinite ease-in-out reverse;
+}
+
+/* Adicionando mais uma célula via CSS puro (opcional) */
+.footer-container::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.2) 0%, rgba(153,27,27,0) 70%);
+  top: 20%;
+  right: 30%;
+  pointer-events: none;
+  animation: floatBlood 15s infinite linear;
+}
+
+@keyframes floatBlood {
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-40px) scale(1.1); opacity: 0.8; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}

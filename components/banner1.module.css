@@ -1,0 +1,18 @@
+.banner1-container1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 24px;
+}
+.banner1-max-width {
+  width: 100%;
+  max-width: 1200px;
+}
+.banner1-text1 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  color: #333;
+}
