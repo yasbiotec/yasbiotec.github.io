@@ -1,21 +1,16 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/9e9b8d337297fa7f.js"
+    "static/chunks/7bc6189935d39e33.js"
   ],
   "/_error": [
-    "static/chunks/6f93f266acda4d4e.js"
+    "static/chunks/5d4e1b157ca8b667.js"
   ],
   "/programa": [
-    "static/chunks/2dab08169dd3c2ed.js"
+    "static/chunks/f7d663e96cec395e.js"
   ],
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [
-      {
-        "source": "/hemohelp//_next/:path+",
-        "destination": "/hemohelp/_next/:path+"
-      }
-    ],
+    "beforeFiles": [],
     "fallback": []
   },
   "sortedPages": [
