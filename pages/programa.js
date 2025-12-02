@@ -19,7 +19,7 @@ const Programa = () => {
   };
 
   const calcularResultados = () => {
-    setStep(3); // Loading state
+    setStep(3); 
 
     setTimeout(() => {
       const resultadosFinais = [];
@@ -54,7 +54,7 @@ const Programa = () => {
 
       setReport(resultadosFinais);
       setUsedSources(fontesColetadas);
-      setStep(4); // Show report
+      setStep(4); 
     }, 3000);
   };
 
@@ -67,7 +67,6 @@ const Programa = () => {
 
       <main className={styles['main-content']}>
 
-        {/* --- PASSO 0: INTRODUÇÃO --- */}
         {step === 0 && (
           <section className={styles['step-intro']}>
             <h1 className={styles['page-title']}>Vamos entender seus exames?</h1>
@@ -102,15 +101,14 @@ const Programa = () => {
 
             <button
               onClick={() => setStep(1)}
-              className={projectStyles['btn-primary']}
-              style={{ marginTop: '40px', fontSize: '1.2rem', padding: '18px 40px' }}
+              className={`${projectStyles['btn']} ${projectStyles['btn-primary']}`}
+              style={{ marginTop: '40px' }}
             >
               Começar Agora
             </button>
           </section>
         )}
 
-        {/* --- PASSO 1: DADOS PESSOAIS --- */}
         {step === 1 && (
           <section className={styles['form-section']}>
             <div className={styles['form-card']}>
@@ -139,11 +137,16 @@ const Programa = () => {
               </div>
 
               <div className={styles['button-row']}>
-                <button onClick={() => setStep(0)} className={styles['btn-secondary']}>Voltar</button>
+                <button 
+                  onClick={() => setStep(0)} 
+                  className={`${projectStyles['btn']} ${projectStyles['btn-outline']}`}
+                >
+                  Voltar
+                </button>
                 <button
                   onClick={() => setStep(2)}
                   disabled={!userData.idade || !userData.sexo}
-                  className={projectStyles['btn-primary']}
+                  className={`${projectStyles['btn']} ${projectStyles['btn-primary']}`}
                 >
                   Continuar
                 </button>
@@ -152,7 +155,6 @@ const Programa = () => {
           </section>
         )}
 
-        {/* --- PASSO 2: INSERÇÃO DE EXAMES --- */}
         {step === 2 && (
           <section className={styles['exam-input-section']}>
             <h2 style={{ textAlign: 'center', color: '#881337', marginBottom: '10px' }}>Preencha o que você tiver</h2>
@@ -197,11 +199,16 @@ const Programa = () => {
             ))}
 
             <div className={styles['button-row-fixed']}>
-              <button onClick={() => setStep(1)} className={styles['btn-secondary']}>Voltar</button>
+              <button 
+                onClick={() => setStep(1)} 
+                className={`${projectStyles['btn']} ${projectStyles['btn-outline']}`}
+              >
+                Voltar
+              </button>
               <button
                 onClick={calcularResultados}
-                className={projectStyles['btn-primary']}
-                style={{ boxShadow: '0 10px 25px -5px rgba(79, 70, 229, 0.4)' }}
+                className={`${projectStyles['btn']} ${projectStyles['btn-danger']}`}
+                style={{ boxShadow: '0 10px 25px -5px rgba(190, 18, 60, 0.4)' }}
               >
                 Analisar Resultados
               </button>
@@ -209,7 +216,6 @@ const Programa = () => {
           </section>
         )}
 
-        {/* --- PASSO 3: LOADING --- */}
         {step === 3 && (
           <section className={styles['loading-section']}>
             <img
@@ -222,7 +228,6 @@ const Programa = () => {
           </section>
         )}
 
-        {/* --- PASSO 4: RELATÓRIO --- */}
         {step === 4 && (
           <section className={styles['report-section']}>
             <div className={styles['report-header']}>
@@ -286,13 +291,19 @@ const Programa = () => {
             </div>
 
             <div className={styles['button-row']}>
-              <button onClick={() => window.print()} className={styles['btn-print']}>
+              <button 
+                onClick={() => window.print()} 
+                className={`${projectStyles['btn']} ${projectStyles['btn-primary']}`}
+              >
                 <span style={{ marginRight: '10px', display: 'inline-flex', alignItems: 'center' }}>
                   <MascotEmoji type="print" size={90} />
                 </span>
                 Imprimir Relatório
               </button>
-              <button onClick={() => setStep(0)} className={styles['btn-restart']}>
+              <button 
+                onClick={() => setStep(0)} 
+                className={`${projectStyles['btn']} ${projectStyles['btn-outline']}`}
+              >
                 <span style={{ marginRight: '10px', display: 'inline-flex', alignItems: 'center' }}>
                   <MascotEmoji type="restart" size={90} />
                 </span>

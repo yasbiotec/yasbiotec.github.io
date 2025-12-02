@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
 "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "predeploy": "npm run build",  // <--- Adicione esta linha
-  "deploy": "gh-pages -d out"    // <--- Adicione esta linha (Next exporta para pasta 'out')
-},
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out --dotfiles"
+  },
   "dependencies": {
     "next": "16.0.4",
     "react": "19.2.0",

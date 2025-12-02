@@ -1,90 +1,125 @@
-/* --- Estilos Globais do Projeto (Paleta Hemo & Plasma) --- */
+/* --- Estilos Globais e Botões Padronizados --- */
 
-/* --- TIPOGRAFIA --- */
-.hero__title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #881337; /* Vinho (Base do Sangue) */
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.hero__subhead {
-  font-size: 1.25rem;
-  color: #4b5563; /* Cinza Neutro */
-  margin-bottom: 32px;
-  line-height: 1.6;
-}
-
-/* Títulos de Seções */
-.about-section-title, 
-.team-section-title, 
-.process-title, 
-.faq-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #881337; /* Vinho */
-  margin-bottom: 16px;
-}
-
-.about-intro, 
-.team-intro, 
-.process-intro {
-  font-size: 1.1rem;
-  color: #4b5563;
-  max-width: 800px;
-}
+/* --- CORES --- */
+/* Vermelho (Hemácias): #be123c */
+/* Amarelo/Laranja (Plasma): #f59e0b */
+/* Texto Escuro (Leitura): #1f2937 */
 
 /* --- BOTÕES --- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
-  border-radius: 50px; /* Mais arredondado = mais orgânico/célula */
-  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
   border: none;
+  text-decoration: none;
+  line-height: 1;
 }
 
-/* Botão Primário: O "Sangue" (Ação Principal) */
+/* Botão Laranja (Plasma) - Principal */
 .btn-primary {
-  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); /* Vermelho Rosado/Rubi */
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(225, 29, 72, 0.39);
+  background-color: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
 }
 
 .btn-primary:hover {
+  background-color: #d97706;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.23);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Botão Vermelho (Sangue) - Ação Crítica */
+.btn-danger {
+  background-color: #be123c;
+  color: white;
+  box-shadow: 0 4px 10px rgba(190, 18, 60, 0.3);
+}
+
+.btn-danger:hover {
+  background-color: #9f1239;
+  transform: translateY(-2px);
+}
+
+/* Botão Outline */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #f59e0b;
+  color: #d97706;
+}
+
+.btn-outline:hover {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+/* --- TIPOGRAFIA GLOBAL --- */
+.hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #881337;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero__subhead {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Títulos de Seções */
+.about-section-title,
+.team-section-title,
+.process-title,
+.faq-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #881337;
+  margin-bottom: 16px;
+}
+
+.about-intro,
+.team-intro,
+.process-intro {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 800px;
 }
 
 /* --- CARDS & ELEMENTOS --- */
-.card, 
-.about-card, 
-.step-card, 
-.faq-card, 
+.card,
+.about-card,
+.step-card,
+.faq-card,
 .team-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 24px;
-  border: 1px solid #f3f4f6; /* Borda neutra inicial */
+  border: 1px solid #f3f4f6;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.card:hover, 
+.card:hover,
 .team-card:hover {
-  border-color: #fcd34d; /* Hover com borda Dourada (Plasma) */
+  border-color: #fcd34d;
   transform: translateY(-2px);
 }
 
-/* Títulos dentro dos Cards */
-.name, 
+.name,
 .card-heading {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #1f2937;
@@ -92,26 +127,24 @@
   margin-bottom: 4px;
 }
 
-/* --- O TOQUE DO PLASMA (Amarelo/Ouro) --- */
-
-/* Cargos e Tags: Representam "Destaque/Valor" */
+/* --- CARGOS E TAGS (Plasma Style) --- */
 .role {
   display: inline-block;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.85rem;
-  color: #b45309; /* Âmbar Escuro (Legibilidade) */
-  background-color: #fffbeb; /* Fundo Plasma Suave */
+  color: #b45309;
+  background-color: #fffbeb;
   padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid #fcd34d; /* Borda Dourada */
+  border-radius: 6px;
+  border: 1px solid #fcd34d;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 8px;
 }
 
-/* Ícones: Representam "Inteligência" */
 .card-icon {
-  color: #d97706; /* Dourado/Âmbar */
+  color: #d97706;
   margin-bottom: 16px;
   font-size: 1.5rem;
 }
@@ -131,15 +164,16 @@
   padding: 20px 0;
   background: none;
   border: none;
-  border-bottom: 1px solid #e5e7eb; /* Linha cinza clara */
+  border-bottom: 1px solid #e5e7eb;
   cursor: pointer;
   text-align: left;
   transition: color 0.2s;
+  font-family: 'Poppins', sans-serif;
 }
 
 .faq-trigger:hover {
-  color: #be123c; /* Hover Vinho */
-  border-bottom-color: #fcd34d; /* Linha vira Dourada no hover */
+  color: #be123c;
+  border-bottom-color: #fcd34d;
 }
 
 .faq-answer {
@@ -147,4 +181,5 @@
   color: #4b5563;
   line-height: 1.6;
   padding-top: 8px;
+  font-family: 'Poppins', sans-serif;
 }

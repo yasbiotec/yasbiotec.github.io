@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import styles from './home.module.css'
+import projectStyles from './style.module.css'
 
 const Home = () => {
   const [openFaq, setOpenFaq] = useState(null)
@@ -19,7 +20,6 @@ const Home = () => {
 
       <Navigation />
 
-      {/* --- HERO SECTION --- */}
       <section className={styles['hero-section']}>
         <div className={styles['hero-content']}>
           <h1 className={styles['hero-title']}>
@@ -33,17 +33,23 @@ const Home = () => {
             com um mascote acessível para ajudar profissionais e pacientes a traduzir rapidamente
             os resultados do Hemograma Completo em informações claras e aplicáveis.
           </p>
+          <div style={{ marginTop: '2rem' }}>
+            <button 
+              className={`${projectStyles['btn']} ${projectStyles['btn-primary']}`}
+              onClick={() => window.location.href = '/programa'}
+            >
+              Começar Análise
+            </button>
+          </div>
         </div>
         <div className={styles['hero-image-container']}>
           <img alt="Mascote HemoBat" src="/external/aaa-300h.png" className={styles['mascot-hero']} />
         </div>
       </section>
 
-      {/* --- SOBRE E DESTAQUES --- */}
       <section className={styles['about-section']}>
         <div className={styles['about-container']}>
 
-          {/* Coluna Esquerda: Conteúdo Principal */}
           <div className={styles['about-left-column']}>
             <h2 className={styles['section-heading']}>Sobre o Hemohelp</h2>
             <p className={styles['about-description']}>
@@ -53,10 +59,9 @@ const Home = () => {
               rapidamente o que seu exame de sangue está dizendo.
             </p>
 
-            {/* Card: Missão */}
             <div className={styles['info-card']}>
               <div className={styles['card-icon']}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
               </div>
               <h3 className={styles['card-title']}>Nossa Missão</h3>
               <p className={styles['card-text']}>
@@ -66,10 +71,9 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Card: Ciência */}
             <div className={styles['info-card']}>
               <div className={styles['card-icon']}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
               </div>
               <h3 className={styles['card-title']}>A ciência por trás da simplicidade</h3>
               <p className={styles['card-text']}>
@@ -80,10 +84,9 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Card: Confiança */}
             <div className={styles['info-card']}>
               <div className={styles['card-icon']}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
               </div>
               <h3 className={styles['card-title']}>Confiança, privacidade e padrões profissionais</h3>
               <p className={styles['card-text']}>
@@ -97,7 +100,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Coluna Direita: Sidebar */}
           <div className={styles['about-sidebar']}>
             <div className={styles['sidebar-card']}>
               <h3 className={styles['sidebar-title']}>Por que somos diferentes?</h3>
@@ -117,7 +119,9 @@ const Home = () => {
               <h3 className={styles['sidebar-title']}>Explore</h3>
               <ul className={styles['explore-list']}>
                 <li>
-                  <span className={styles['explore-icon']}>🩸</span>
+                  <span className={styles['explore-icon']}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  </span>
                   <a href="#team" className={styles['explore-link-highlight']}>Conheça os Criadores (E o Mascote!)</a>
                 </li>
                 <li>
@@ -133,9 +137,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- TIME --- */}
       <section id="team" className={styles['team-section']}>
-        <h2 className={styles['section-heading']}>🩸 Conheça os Criadores (E o Mascote!)</h2>
+        <h2 className={styles['section-heading']}>Conheça os Criadores (E o Mascote!)</h2>
         <p className={styles['team-subtitle']}>
           O HemoHelp é fruto de uma parceria entre mentes curiosas e apaixonadas por ciência!
           Somos estudantes do curso de Biotecnologia da Universidade Federal do Rio Grande do Sul,
@@ -166,7 +169,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- MASCOTE --- */}
       <section className={styles['mascot-section']}>
         <div className={styles['mascot-content']}>
           <div className={styles['mascot-text']}>
@@ -186,7 +188,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- COMO FUNCIONA --- */}
       <section id="como" className={styles['steps-section']}>
         <div className={styles['steps-header-group']}>
           <h2 className={styles['section-heading']}>Como o HemoHelp analisa seu hemograma completo</h2>
@@ -197,7 +198,6 @@ const Home = () => {
         </div>
 
         <div className={styles['steps-grid']}>
-          {/* Card 01 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -211,7 +211,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 02 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -225,7 +224,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 03 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -241,7 +239,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 04 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -255,7 +252,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 05 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -274,7 +270,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Card 06 */}
           <div className={styles['step-card']}>
             <div className={styles['step-header']}>
               <div className={styles['step-icon-box']}>
@@ -290,12 +285,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- FAQ --- */}
-      <section id="faq" className={styles['faq']}>
+      <section id="faq" className={styles['faq-section']}>
         <h2 className={styles['section-heading']}>Perguntas Frequentes</h2>
         <div className={styles['faq-grid']}>
 
-          {/* Coluna 1: Segurança */}
           <div className={styles['faq-column']}>
             <h3 className={styles['item-heading']}>Segurança</h3>
 
@@ -322,7 +315,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Sobre */}
           <div className={styles['faq-column']}>
             <h3 className={styles['item-heading']}>Sobre</h3>
 
